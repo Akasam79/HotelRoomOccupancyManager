@@ -29,12 +29,9 @@ public class RoomOccupancyManagerService {
 			
 			if(premiumRoomsUsed < roomsAvailable.getAvailablePremiumRoom() 
 					&& bidPrice >= Constants.PREMIUM_MINIMUM_AMOUNT) {
-				
 				premiumRoomsUsed++;
-				
 				premiumIncomeSum += potentialGuests[i];
 				logger.info("value : "+ bidPrice);
-				logger.info("value : "+ (i+1));
 				
 			} else {
 				if(premiumRoomsUsed < roomsAvailable.getAvailablePremiumRoom() && 
@@ -42,7 +39,7 @@ public class RoomOccupancyManagerService {
 						((i+1) > roomsAvailable.getAvailableEconomyRoom())) {
 					premiumRoomsUsed++;
 					premiumIncomeSum += potentialGuests[i];
-					logger.info("valu : " + bidPrice);
+					logger.info("value : " + bidPrice);
 					logger.info("value : " +(i + 1));
 					
 				}else if(economyRoomsUsed < roomsAvailable.getAvailableEconomyRoom() 
