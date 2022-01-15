@@ -1,6 +1,6 @@
 # HotelRoomOccupancyManager
 
-This is a simple Service that provides an interface for hotels to enter the numbers of
+This is a Service that provides an interface for hotels to enter the numbers of
 Premium and Economy rooms that are available and immediately returns how many rooms of each category will be occupied and the sum of money they will make in total for each one of the categories.
 
 ## Run Tests...
