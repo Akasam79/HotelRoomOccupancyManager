@@ -11,8 +11,6 @@ import com.challenge.room.occupancy.util.Constants;
 @Service
 public class RoomOccupancyManagerService {
 	
-	Logger logger = LoggerFactory.getLogger(RoomOccupancyManagerService.class);
-	
 	private double[] potentialGuests = {23, 45, 155, 374, 22, 99.99, 100, 101, 115, 209};
 	
 	public RoomsUsageAndRevenue calculateRoomUsage(RoomsAvailable roomsAvailable) {
@@ -30,23 +28,20 @@ public class RoomOccupancyManagerService {
 			if(premiumRoomsUsed < roomsAvailable.getAvailablePremiumRoom() 
 					&& bidPrice >= Constants.PREMIUM_MINIMUM_AMOUNT) {
 				premiumRoomsUsed++;
-				premiumIncomeSum += potentialGuests[i];
-				logger.info("value : "+ bidPrice);
+				premiumIncomeSum += bidPrice;
 				
 			} else {
 				if(premiumRoomsUsed < roomsAvailable.getAvailablePremiumRoom() && 
 						bidPrice < Constants.PREMIUM_MINIMUM_AMOUNT && 
 						((i+1) > roomsAvailable.getAvailableEconomyRoom())) {
 					premiumRoomsUsed++;
-					premiumIncomeSum += potentialGuests[i];
-					logger.info("value : " + bidPrice);
-					logger.info("value : " +(i + 1));
+					premiumIncomeSum += bidPrice;
 					
 				}else if(economyRoomsUsed < roomsAvailable.getAvailableEconomyRoom() 
 						&& bidPrice < Constants.PREMIUM_MINIMUM_AMOUNT) {
 					
 					economyRoomsUsed++;
-					economyIncomeSum += potentialGuests[i];
+					economyIncomeSum += bidPrice;
 				}
 			}
 			

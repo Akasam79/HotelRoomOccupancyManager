@@ -39,7 +39,7 @@ public class HotelRoomOccupancyControllerTest {
 				.build();
 		
 		ObjectMapper objectMapper = new ObjectMapper();
-		String jsonRequest = objectMapper.writeValueAsString(roomsAvailable);
+		String jsonRequest = objectMapper.writeValueAsString(roomsAvailable);	
 		
 		// when
 		given(roomOccupancyManagerService.calculateRoomUsage(ArgumentMatchers.any())).willReturn(RoomsUsageAndRevenue.builder()

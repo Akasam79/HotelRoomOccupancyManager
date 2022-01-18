@@ -14,10 +14,6 @@ import io.swagger.v3.oas.annotations.Operation;
 @RequestMapping("")
 public class HotelRoomManagerController {
 	
-	@GetMapping
-	public String testDefault() {
-		return "setUp is running";
-	}
 	@Autowired
 	private RoomOccupancyManagerService roomOccupancyManagerService;
 	
